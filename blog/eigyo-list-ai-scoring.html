@@ -11,6 +11,11 @@
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://www.aigear.jp/blog/eigyo-list-ai-scoring.html">
 <meta property="og:locale" content="ja_JP">
+<meta property="og:image" content="https://www.aigear.jp/blog/img/eigyo-list-ai-scoring-hero.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://www.aigear.jp/blog/img/eigyo-list-ai-scoring-hero.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&family=Noto+Sans+JP:wght@400;500;700;800&display=swap" rel="stylesheet">
@@ -72,6 +77,7 @@ footer a{color:var(--fg-muted)}
   <nav class="toc"><b>目次</b><ol><li><a href="#s1">営業リスト100社の「順番」で成果が変わる理由</a></li><li><a href="#s2">AIスコアリングの手順（3ステップ）</a></li><li><a href="#s3">実務でつまずきやすい2つのポイント</a></li><li><a href="#s4">リストの次は「当たった後」を自動化する</a></li><li><a href="#s5">よくある質問</a></li><li><a href="#s6">採点プロンプトの全文を配布しています</a></li></ol></nav>
   <article class="lead">
 <p>営業リストの優先順位は、AIに「調べて、採点して、並べ替える」ところまで任せられます。やり方は、①リスト（社名の一覧）をAI（Claude）に渡す、②各社の公開情報をWebリサーチさせる、③5基準×5点=25点満点で採点させて降順に並べ替える——の3段です。上から順に当たるだけの状態になったリストは、テレアポでもフォーム営業でも成果の出方が変わります。この記事では、私が実際の営業リストで使っているスコアリングの手順と採点基準を公開します。</p>
+<p><img src="/blog/img/eigyo-list-ai-scoring-hero.png" alt="営業リストAIスコアリングのフロー図: リストを渡す→AIが各社をリサーチし5基準25点満点で採点→当たる順に並べ替え。1社15分の調査が自動に" loading="lazy"></p>
 <h2 id="s1">営業リスト100社の「順番」で成果が変わる理由</h2>
 <p>同じ100社のリストでも、上から機械的に当たるのと、受注確度の高い順に当たるのとでは、同じ工数で得られるアポの質が変わります。問題は、優先順位づけを人がやると1社あたり10〜15分の企業リサーチが必要になることです。100社なら20時間超。だから多くの現場では「調べずに上から当たる」ことになります。</p>
 <p>AIによるスコアリングは、この「調べる時間」をゼロにします。リサーチと採点の作業はAIがやり、人は採点基準の設計と、上位企業への実際のアプローチに集中します。</p>

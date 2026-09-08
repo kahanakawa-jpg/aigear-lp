@@ -11,6 +11,11 @@
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://www.aigear.jp/blog/shodan-gijiroku-ai-jidoka.html">
 <meta property="og:locale" content="ja_JP">
+<meta property="og:image" content="https://www.aigear.jp/blog/img/shodan-gijiroku-ai-jidoka-hero.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://www.aigear.jp/blog/img/shodan-gijiroku-ai-jidoka-hero.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&family=Noto+Sans+JP:wght@400;500;700;800&display=swap" rel="stylesheet">
@@ -72,6 +77,7 @@ footer a{color:var(--fg-muted)}
   <nav class="toc"><b>目次</b><ol><li><a href="#s1">商談の議事録作成が終わらない理由</a></li><li><a href="#s2">AIで議事録を自動化する3ステップ</a></li><li><a href="#s3">自動化した議事録の品質を落とさない3つのコツ</a></li><li><a href="#s4">どこまで自動化できるか（実務での線引き）</a></li><li><a href="#s5">よくある質問</a></li><li><a href="#s6">この手順をそのまま使いたい方へ</a></li></ol></nav>
   <article class="lead">
 <p>商談の議事録はAIで自動化でき、「書く仕事」から「確認する仕事」に変えられます。やり方は、①オンライン商談ツールの文字起こしをAI（Claude）に渡す、②要点整理とCRM入力とお礼メールの下書きまでを一つの指示で実行させる、③人は最後に確認だけする——この3段です。私はこの形にしてから、商談1件あたりの後処理が20分前後から3分ほどになりました。この記事では、実際に毎日使っている手順をそのまま公開します。</p>
+<p><img src="/blog/img/shodan-gijiroku-ai-jidoka-hero.png" alt="商談議事録のAI自動化フロー図: 文字起こし→Claudeが議事録・CRM入力・お礼メール下書きを一括処理→人は確認と送信のみ。商談1件の後処理が20分から3分に" loading="lazy"></p>
 <h2 id="s1">商談の議事録作成が終わらない理由</h2>
 <p>営業の現場で議事録が負担になるのは、書くことそのものより「同じ内容を何度も転記している」ためです。</p>
 <ul><li>商談中のメモ → 清書した議事録</li><li>議事録 → CRM（HubSpotやSalesforce）の商談メモ欄</li><li>議事録 → 上司への報告</li><li>議事録 → お客様へのお礼メール</li></ul>
