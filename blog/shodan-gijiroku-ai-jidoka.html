@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>商談の議事録をAIで自動化する手順｜入力20分→3分｜AIgearブログ</title>
+<meta name="description" content="商談の議事録作成とCRM入力をAIで自動化する具体的な手順を解説。tl;dvの文字起こしをClaudeに渡し、要点整理・Notion登録・お礼メール下書きまでを一気通貫にする実務フローです。">
+<link rel="canonical" href="https://www.aigear.jp/blog/shodan-gijiroku-ai-jidoka.html">
+<meta property="og:title" content="商談の議事録をAIで自動化する手順｜入力20分→3分">
+<meta property="og:description" content="商談の議事録作成とCRM入力をAIで自動化する具体的な手順を解説。tl;dvの文字起こしをClaudeに渡し、要点整理・Notion登録・お礼メール下書きまでを一気通貫にする実務フローです。">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://www.aigear.jp/blog/shodan-gijiroku-ai-jidoka.html">
+<meta property="og:locale" content="ja_JP">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&family=Noto+Sans+JP:wght@400;500;700;800&display=swap" rel="stylesheet">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "商談の議事録をAIで自動化する手順｜入力20分→3分", "description": "商談の議事録作成とCRM入力をAIで自動化する具体的な手順を解説。tl;dvの文字起こしをClaudeに渡し、要点整理・Notion登録・お礼メール下書きまでを一気通貫にする実務フローです。", "datePublished": "2026-09-08", "dateModified": "2026-09-08", "author": {"@type": "Person", "name": "花川和也", "url": "https://www.aigear.jp/#about"}, "publisher": {"@type": "Organization", "name": "株式会社figfig"}, "mainEntityOfPage": "https://www.aigear.jp/blog/shodan-gijiroku-ai-jidoka.html"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "AIgear", "item": "https://www.aigear.jp/"}, {"@type": "ListItem", "position": 2, "name": "ブログ", "item": "https://www.aigear.jp/blog/"}, {"@type": "ListItem", "position": 3, "name": "商談の議事録をAIで自動化する手順｜入力20分→3分", "item": "https://www.aigear.jp/blog/shodan-gijiroku-ai-jidoka.html"}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "無料のツールだけでも議事録の自動化はできますか？", "acceptedAnswer": {"@type": "Answer", "text": "できます。tl;dvは無料プランで録画と文字起こしが可能で、Claudeも無料枠から試せます。まず1商談で試し、効果を確認してから有料プランを検討する順番で十分です。"}}, {"@type": "Question", "name": "文字起こしの精度が低い場合はどうすればいいですか？", "acceptedAnswer": {"@type": "Answer", "text": "多少の誤字は問題になりません。AIは文脈から補正して要点を整理できるためです。ただし固有名詞（社名・製品名・金額）は誤認しやすいので、確認ステップで必ず目視してください。"}}, {"@type": "Question", "name": "ChatGPTでも同じことができますか？", "acceptedAnswer": {"@type": "Answer", "text": "要点整理だけならできます。ただし、Notion・Gmail・HubSpotといった実務ツールへの反映まで一気通貫にするなら、コネクタ（外部ツール連携）が充実しているClaudeのほうが手数が少なく済む、というのが両方を使っての実感です。"}}]}</script>
+<style>
+:root{--bg:#0B0B0F;--surface:#16161E;--surface-2:#1C1C26;--fg:#EDEDF0;--fg-muted:#8A8A94;
+--border:rgba(255,255,255,.08);--accent:#D97757;--accent-hover:#E8906F;--accent-soft:rgba(217,119,87,.15);
+--radius:14px;--font-jp:'Noto Sans JP','Inter',system-ui,sans-serif}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--fg);font-family:var(--font-jp);line-height:1.9;-webkit-font-smoothing:antialiased}
+a{color:var(--accent);text-decoration:none}a:hover{color:var(--accent-hover);text-decoration:underline}
+header.site{position:sticky;top:0;background:rgba(11,11,15,.85);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);z-index:10}
+.hwrap{max-width:820px;margin:0 auto;padding:14px 20px;display:flex;justify-content:space-between;align-items:center}
+.logo{font-family:'Inter',sans-serif;font-weight:800;letter-spacing:.5px;color:var(--fg);font-size:18px}
+.logo span{color:var(--accent)}.hcta{background:var(--accent);color:#fff;padding:8px 16px;border-radius:99px;font-size:13px;font-weight:700}
+.hcta:hover{background:var(--accent-hover);color:#fff;text-decoration:none}
+main{max-width:820px;margin:0 auto;padding:48px 20px 80px}
+.crumb{font-size:12px;color:var(--fg-muted);margin-bottom:24px}.crumb a{color:var(--fg-muted)}
+h1{font-size:clamp(24px,4.5vw,34px);line-height:1.45;font-weight:800;margin:0 0 12px}
+.meta{color:var(--fg-muted);font-size:13px;margin-bottom:36px}
+.lead{font-size:16.5px}
+h2{font-size:clamp(19px,3.2vw,24px);font-weight:800;margin:56px 0 16px;padding:12px 16px;background:var(--surface);border-left:3px solid var(--accent);border-radius:0 var(--radius) var(--radius) 0}
+h3{font-size:17px;font-weight:700;margin:32px 0 8px;color:var(--fg)}
+p{margin:0 0 1.2em}ul,ol{padding-left:1.4em}li{margin:.35em 0}
+strong{color:#fff}
+blockquote{margin:1.4em 0;padding:14px 18px;background:var(--surface);border-left:3px solid var(--fg-muted);border-radius:0 var(--radius) var(--radius) 0;color:var(--fg-muted)}
+blockquote p{margin:0}
+.tbl{overflow-x:auto;margin:1.4em 0}table{border-collapse:collapse;width:100%;font-size:14px}
+th,td{border:1px solid var(--border);padding:10px 12px;text-align:left}th{background:var(--surface-2);white-space:nowrap}
+pre{background:var(--surface-2);border:1px solid var(--border);border-radius:var(--radius);padding:16px;overflow-x:auto;font-size:13px;line-height:1.7}
+code{font-family:ui-monospace,Menlo,monospace}p code,li code{background:var(--surface-2);padding:2px 6px;border-radius:6px;font-size:.9em}
+img{max-width:100%;border-radius:var(--radius);border:1px solid var(--border)}
+hr{border:0;border-top:1px solid var(--border);margin:48px 0}
+.toc{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:18px 22px;margin:0 0 8px;font-size:14px}
+.toc b{display:block;margin-bottom:8px;color:var(--fg-muted);font-size:12px;letter-spacing:1px}
+.toc ol{margin:0;padding-left:1.3em}.toc a{color:var(--fg)}
+.cta-box{background:linear-gradient(135deg,var(--accent-soft),var(--surface));border:1px solid var(--accent);border-radius:var(--radius);padding:28px;margin:56px 0 0;text-align:center}
+.cta-box p{color:var(--fg-muted);font-size:14px;margin-bottom:18px}
+.cta-box .btn{display:inline-block;background:var(--accent);color:#fff;font-weight:700;padding:13px 28px;border-radius:99px;margin:4px 6px}
+.cta-box .btn:hover{background:var(--accent-hover);text-decoration:none}
+.cta-box .btn.ghost{background:transparent;border:1px solid var(--accent);color:var(--accent)}
+.related{margin-top:56px}.related h2{margin-top:0}
+.card{display:block;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:18px 20px;margin:10px 0;color:var(--fg)}
+.card:hover{border-color:var(--accent);text-decoration:none}.card small{color:var(--fg-muted)}
+footer{border-top:1px solid var(--border);color:var(--fg-muted);font-size:12px;text-align:center;padding:32px 20px}
+footer a{color:var(--fg-muted)}
+</style>
+</head>
+<body>
+<header class="site"><div class="hwrap">
+  <a class="logo" href="/">AI<span>gear</span></a>
+  <a class="hcta" href="/#contact">無料で相談する</a>
+</div></header>
+<main>
+  <div class="crumb"><a href="/">AIgear</a> › <a href="/blog/">ブログ</a> › 商談の議事録をAIで自動化する手順｜入力20分→3分</div>
+  <h1>商談の議事録をAIで自動化する手順｜入力20分→3分</h1>
+  <div class="meta">公開: 2026-09-08｜執筆: 花川和也（株式会社figfig・AIgear運営）</div>
+  <nav class="toc"><b>目次</b><ol><li><a href="#s1">商談の議事録作成が終わらない理由</a></li><li><a href="#s2">AIで議事録を自動化する3ステップ</a></li><li><a href="#s3">自動化した議事録の品質を落とさない3つのコツ</a></li><li><a href="#s4">どこまで自動化できるか（実務での線引き）</a></li><li><a href="#s5">よくある質問</a></li><li><a href="#s6">この手順をそのまま使いたい方へ</a></li></ol></nav>
+  <article class="lead">
+<p>商談の議事録はAIで自動化でき、「書く仕事」から「確認する仕事」に変えられます。やり方は、①オンライン商談ツールの文字起こしをAI（Claude）に渡す、②要点整理とCRM入力とお礼メールの下書きまでを一つの指示で実行させる、③人は最後に確認だけする——この3段です。私はこの形にしてから、商談1件あたりの後処理が20分前後から3分ほどになりました。この記事では、実際に毎日使っている手順をそのまま公開します。</p>
+<h2 id="s1">商談の議事録作成が終わらない理由</h2>
+<p>営業の現場で議事録が負担になるのは、書くことそのものより「同じ内容を何度も転記している」ためです。</p>
+<ul><li>商談中のメモ → 清書した議事録</li><li>議事録 → CRM（HubSpotやSalesforce）の商談メモ欄</li><li>議事録 → 上司への報告</li><li>議事録 → お客様へのお礼メール</li></ul>
+<p>1回の商談から4種類のアウトプットを手作業で作っている状態です。1件20分としても、週10商談なら200分。この時間は商談準備にも追客にも使えていません。</p>
+<p>AIによる議事録の自動化とは、この「転記」をなくすことです。文字起こしという一次情報を1つ作れば、残りの4種類はすべてAIが派生させられます。</p>
+<h2 id="s2">AIで議事録を自動化する3ステップ</h2>
+<p>前提として、特別な開発は不要です。使うのは次の2つだけです。</p>
+<div class="tbl"><table><thead><tr><th>道具</th><th>役割</th><th>費用感</th></tr></thead><tbody><tr><td>tl;dv（またはZoom/Meetの文字起こし）</td><td>商談の録画と文字起こし</td><td>無料プランから</td></tr><tr><td>Claude（クロード）</td><td>要点整理・CRM入力・メール下書き</td><td>月額プランで可</td></tr></tbody></table></div>
+<h3>ステップ1: 商談の文字起こしを自動で残す</h3>
+<p>オンライン商談にtl;dvなどの録画ツールを同席させ、文字起こしを自動生成します。ここで大事なのは「商談中にメモを取るのをやめる」ことです。メモはAIの仕事にして、人は会話に集中します。</p>
+<p>※録画は必ず冒頭で相手の了承を取ってください。「議事録の精度を上げるため録画させてください」で断られることはほぼありません。</p>
+<h3>ステップ2: Claudeに文字起こしを渡して一括処理させる</h3>
+<p>商談後、文字起こし全文をClaudeに渡し、次のような指示を出します。</p>
+<pre><code>この商談の文字起こしから、以下を作成してください。
+1. 議事録: 参加者/先方の課題/当社の説明内容/先方の要望/温度感/次のアクション
+2. CRM入力用の要約: 商談メモ欄にそのまま貼れる5行
+3. お礼メールの下書き: ①貴社の状況 ②お力添えできる点 ③今後の流れ の3段構成</code></pre>
+<p>この指示を毎回打つのは手間なので、私はスキル（定型指示の保存機能）にして「商談処理して」の一言で走るようにしています。実際の運用では、Notionの「商談メモ受信箱」データベースに議事録が登録され、HubSpotへの反映とGmailのお礼メール下書きまで自動で終わります。</p>
+<h3>ステップ3: 人は「確認と送信」だけやる</h3>
+<p>AIの出力をそのまま送らないことが、自動化を定着させるコツです。</p>
+<ol><li>1. 議事録の事実関係を確認する（数字・固有名詞・期日）</li><li>2. お礼メールの下書きを開き、一言だけ自分の言葉を足して送信する</li><li>3. CRMの商談メモを確認して保存する</li></ol>
+<p>ここまでで3分程度です。「AIが書き、人が確認する」の分担にすると、精度の不安なく毎日回せます。</p>
+<h2 id="s3">自動化した議事録の品質を落とさない3つのコツ</h2>
+<h3>議事録のフォーマットを固定する</h3>
+<p>毎回自由に書かせると品質がぶれます。「参加者/現状/当社説明/先方要望/温度感/次のアクション」のように項目を固定した指示にすると、商談をまたいだ比較もできるようになります。</p>
+<h3>温度感と次のアクションを必ず入れる</h3>
+<p>議事録の価値は記録ではなく「次の一手」です。先方の発言から温度感（前向き/迷い/様子見）を判定させ、期日つきの次アクションまで書かせると、追客漏れが減ります。</p>
+<h3>実在の顧客情報の扱いを決めておく</h3>
+<p>文字起こしには顧客の固有情報が含まれます。AIツールの学習設定（入力データを学習に使わない設定）を確認し、社内のデータ取扱い規程に沿って運用してください。</p>
+<h2 id="s4">どこまで自動化できるか（実務での線引き）</h2>
+<p>私の顧問先でもこの仕組みを導入していますが、うまくいく会社は「全部をAIに任せない」線引きが明確です。</p>
+<ul><li><strong>自動化する</strong>: 文字起こし、議事録の清書、CRM入力、お礼メールの下書き、追客リマインド</li><li><strong>人がやる</strong>: 商談そのもの、温度感の最終判断、メールの最後のひと言、送信ボタン</li></ul>
+<p>商談の前後の事務はAIに寄せて、人は会話と判断に集中する。この形が、営業のAI活用でもっとも早く効果が出る入口です。関連して、朝のメール処理を自動化する手順は<a href="/blog/eigyo-mail-ai-henshin.html">営業メールのAI返信下書き</a>で、営業リストの優先順位づけは<a href="/blog/eigyo-list-ai-scoring.html">AIによるリストスコアリング</a>で解説しています。</p>
+<h2 id="s5">よくある質問</h2>
+<h3>無料のツールだけでも議事録の自動化はできますか？</h3>
+<p>できます。tl;dvは無料プランで録画と文字起こしが可能で、Claudeも無料枠から試せます。まず1商談で試し、効果を確認してから有料プランを検討する順番で十分です。</p>
+<h3>文字起こしの精度が低い場合はどうすればいいですか？</h3>
+<p>多少の誤字は問題になりません。AIは文脈から補正して要点を整理できるためです。ただし固有名詞（社名・製品名・金額）は誤認しやすいので、確認ステップで必ず目視してください。</p>
+<h3>ChatGPTでも同じことができますか？</h3>
+<p>要点整理だけならできます。ただし、Notion・Gmail・HubSpotといった実務ツールへの反映まで一気通貫にするなら、コネクタ（外部ツール連携）が充実しているClaudeのほうが手数が少なく済む、というのが両方を使っての実感です。</p>
+<h2 id="s6">この手順をそのまま使いたい方へ</h2>
+<p>この記事で紹介した商談処理の指示文（プロンプト）一式は、<a href="https://42pa3z.share-na2.hsforms.com/2Nz5ZjMlJRXqzbjEWIDUd1Q">配布フォーム</a>から無料で受け取れます。自社の営業フローに合わせた組み込み方を相談したい場合は、<a href="https://www.aigear.jp/">AIgear</a>の無料壁打ち（月5枠・60分）をご利用ください。売り込みはしません。</p>
+  </article>
+  <div class="cta-box">
+    <p>記事で使ったプロンプト・資料は無料で配布しています。<br>受け取りページから無料の個別相談（月5枠）にも進めます。</p>
+    <a class="btn" href="https://42pa3z.share-na2.hsforms.com/2Nz5ZjMlJRXqzbjEWIDUd1Q" rel="noopener">プロンプト・資料を無料で受け取る</a>
+    <a class="btn ghost" href="/#contact">無料壁打ち（月5枠・60分）の詳細を見る</a>
+  </div>
+  <div class="related"><h2>関連記事</h2><a class="card" href="/blog/eigyo-mail-ai-henshin.html"><strong>営業メールの返信をAIで下書き｜朝の処理15分→3分</strong><br><small>営業メールの返信下書きをAIに任せる手順を解説。Gmailの受信箱をClaudeに仕分けさせ、優先度づけと返信の下書きま…</small></a><a class="card" href="/blog/eigyo-list-ai-scoring.html"><strong>営業リストの優先順位をAIでつける｜5基準スコアリング</strong><br><small>営業リストの優先順位づけをAIで自動化する方法を解説。企業ごとに公開情報をリサーチさせ、5基準×5点の25点満点でスコア…</small></a></div>
+</main>
+<footer>© 2026 株式会社figfig ｜ <a href="/">AIgear — AI × Sales Consulting</a></footer>
+</body>
+</html>
