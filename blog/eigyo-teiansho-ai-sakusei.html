@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>営業の提案書をAIで作成する手順｜たたき台10分｜AIgearブログ</title>
+<meta name="description" content="営業の提案書をAIで作成する実務手順を解説。商談の議事録をそのまま渡し、先方の課題と提案の対応表からたたき台を作成させて、人は価格と「刺す一枚」に集中する分担です。">
+<link rel="canonical" href="https://www.aigear.jp/blog/eigyo-teiansho-ai-sakusei.html">
+<meta property="og:title" content="営業の提案書をAIで作成する手順｜たたき台10分">
+<meta property="og:description" content="営業の提案書をAIで作成する実務手順を解説。商談の議事録をそのまま渡し、先方の課題と提案の対応表からたたき台を作成させて、人は価格と「刺す一枚」に集中する分担です。">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://www.aigear.jp/blog/eigyo-teiansho-ai-sakusei.html">
+<meta property="og:locale" content="ja_JP">
+<meta property="og:image" content="https://www.aigear.jp/blog/img/eigyo-teiansho-ai-sakusei-hero.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://www.aigear.jp/blog/img/eigyo-teiansho-ai-sakusei-hero.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&family=Noto+Sans+JP:wght@400;500;700;800&display=swap" rel="stylesheet">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "営業の提案書をAIで作成する手順｜たたき台10分", "description": "営業の提案書をAIで作成する実務手順を解説。商談の議事録をそのまま渡し、先方の課題と提案の対応表からたたき台を作成させて、人は価格と「刺す一枚」に集中する分担です。", "datePublished": "2026-09-09", "dateModified": "2026-09-09", "author": {"@type": "Person", "name": "花川和也", "url": "https://www.aigear.jp/#about"}, "publisher": {"@type": "Organization", "name": "株式会社figfig"}, "mainEntityOfPage": "https://www.aigear.jp/blog/eigyo-teiansho-ai-sakusei.html"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "AIgear", "item": "https://www.aigear.jp/"}, {"@type": "ListItem", "position": 2, "name": "ブログ", "item": "https://www.aigear.jp/blog/"}, {"@type": "ListItem", "position": 3, "name": "営業の提案書をAIで作成する手順｜たたき台10分", "item": "https://www.aigear.jp/blog/eigyo-teiansho-ai-sakusei.html"}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "パワーポイントのスライドまで作れますか？", "acceptedAnswer": {"@type": "Answer", "text": "構成と文章のたたき台まではAIが得意です。スライド化も自動化はできますが、まずは「Wordや1枚のドキュメントで内容を固めてからスライドに流し込む」順番をおすすめします。内容が固まっていれば、スライド化は型の流用で数分です。"}}, {"@type": "Question", "name": "議事録がない商談でも使えますか？", "acceptedAnswer": {"@type": "Answer", "text": "使えます。手書きメモや箇条書きでも、渡せばたたき台は出ます。ただし先方の言葉がそのまま残っている文字起こしのほうが、課題の列の説得力が明らかに上がります。これから仕組み化するなら文字起こしから整えるのが近道です。"}}, {"@type": "Question", "name": "顧客情報をAIに入れて問題ないですか？", "acceptedAnswer": {"@type": "Answer", "text": "利用するAIの学習設定（入力データを学習に使わない設定）の確認と、自社のデータ取扱い規程への適合が前提です。法人利用ではその設定が標準のプランを選び、社名を伏せて試すところから始める方法もあります。"}}]}</script>
+<style>
+:root{--bg:#0B0B0F;--surface:#16161E;--surface-2:#1C1C26;--fg:#EDEDF0;--fg-muted:#8A8A94;
+--border:rgba(255,255,255,.08);--accent:#D97757;--accent-hover:#E8906F;--accent-soft:rgba(217,119,87,.15);
+--radius:14px;--font-jp:'Noto Sans JP','Inter',system-ui,sans-serif}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--fg);font-family:var(--font-jp);line-height:1.9;-webkit-font-smoothing:antialiased}
+a{color:var(--accent);text-decoration:none}a:hover{color:var(--accent-hover);text-decoration:underline}
+header.site{position:sticky;top:0;background:rgba(11,11,15,.85);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);z-index:10}
+.hwrap{max-width:820px;margin:0 auto;padding:14px 20px;display:flex;justify-content:space-between;align-items:center}
+.logo{font-family:'Inter',sans-serif;font-weight:800;letter-spacing:.5px;color:var(--fg);font-size:18px}
+.logo span{color:var(--accent)}.hcta{background:var(--accent);color:#fff;padding:8px 16px;border-radius:99px;font-size:13px;font-weight:700}
+.hcta:hover{background:var(--accent-hover);color:#fff;text-decoration:none}
+main{max-width:820px;margin:0 auto;padding:48px 20px 80px}
+.crumb{font-size:12px;color:var(--fg-muted);margin-bottom:24px}.crumb a{color:var(--fg-muted)}
+h1{font-size:clamp(24px,4.5vw,34px);line-height:1.45;font-weight:800;margin:0 0 12px}
+.meta{color:var(--fg-muted);font-size:13px;margin-bottom:36px}
+.lead{font-size:16.5px}
+h2{font-size:clamp(19px,3.2vw,24px);font-weight:800;margin:56px 0 16px;padding:12px 16px;background:var(--surface);border-left:3px solid var(--accent);border-radius:0 var(--radius) var(--radius) 0}
+h3{font-size:17px;font-weight:700;margin:32px 0 8px;color:var(--fg)}
+p{margin:0 0 1.2em}ul,ol{padding-left:1.4em}li{margin:.35em 0}
+strong{color:#fff}
+blockquote{margin:1.4em 0;padding:14px 18px;background:var(--surface);border-left:3px solid var(--fg-muted);border-radius:0 var(--radius) var(--radius) 0;color:var(--fg-muted)}
+blockquote p{margin:0}
+.tbl{overflow-x:auto;margin:1.4em 0}table{border-collapse:collapse;width:100%;font-size:14px}
+th,td{border:1px solid var(--border);padding:10px 12px;text-align:left}th{background:var(--surface-2);white-space:nowrap}
+pre{background:var(--surface-2);border:1px solid var(--border);border-radius:var(--radius);padding:16px;overflow-x:auto;font-size:13px;line-height:1.7}
+code{font-family:ui-monospace,Menlo,monospace}p code,li code{background:var(--surface-2);padding:2px 6px;border-radius:6px;font-size:.9em}
+img{max-width:100%;border-radius:var(--radius);border:1px solid var(--border)}
+hr{border:0;border-top:1px solid var(--border);margin:48px 0}
+.toc{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:18px 22px;margin:0 0 8px;font-size:14px}
+.toc b{display:block;margin-bottom:8px;color:var(--fg-muted);font-size:12px;letter-spacing:1px}
+.toc ol{margin:0;padding-left:1.3em}.toc a{color:var(--fg)}
+.cta-box{background:linear-gradient(135deg,var(--accent-soft),var(--surface));border:1px solid var(--accent);border-radius:var(--radius);padding:28px;margin:56px 0 0;text-align:center}
+.cta-box p{color:var(--fg-muted);font-size:14px;margin-bottom:18px}
+.cta-box .btn{display:inline-block;background:var(--accent);color:#fff;font-weight:700;padding:13px 28px;border-radius:99px;margin:4px 6px}
+.cta-box .btn:hover{background:var(--accent-hover);text-decoration:none}
+.cta-box .btn.ghost{background:transparent;border:1px solid var(--accent);color:var(--accent)}
+.related{margin-top:56px}.related h2{margin-top:0}
+.card{display:block;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:18px 20px;margin:10px 0;color:var(--fg)}
+.card:hover{border-color:var(--accent);text-decoration:none}.card small{color:var(--fg-muted)}
+footer{border-top:1px solid var(--border);color:var(--fg-muted);font-size:12px;text-align:center;padding:32px 20px}
+footer a{color:var(--fg-muted)}
+</style>
+</head>
+<body>
+<header class="site"><div class="hwrap">
+  <a class="logo" href="/">AI<span>gear</span></a>
+  <a class="hcta" href="/#contact">無料で相談する</a>
+</div></header>
+<main>
+  <div class="crumb"><a href="/">AIgear</a> › <a href="/blog/">ブログ</a> › 営業の提案書をAIで作成する手順｜たたき台10分</div>
+  <h1>営業の提案書をAIで作成する手順｜たたき台10分</h1>
+  <div class="meta">公開: 2026-09-09｜執筆: 花川和也（株式会社figfig・AIgear運営）</div>
+  <nav class="toc"><b>目次</b><ol><li><a href="#s1">営業の提案書作成が重くなる本当の理由</a></li><li><a href="#s2">AIで提案書を作成する3ステップ</a></li><li><a href="#s3">提案書の質を落とさない2つのコツ</a></li><li><a href="#s4">提案書の前後もつながっている</a></li><li><a href="#s5">よくある質問</a></li><li><a href="#s6">この指示の型をそのまま使いたい方へ</a></li></ol></nav>
+  <article class="lead">
+<p>営業の提案書は、AIで「たたき台の作成」まで任せられます。手順は、①商談の議事録（文字起こし）をAI（Claude）にそのまま渡す、②「先方の課題×こちらの提案」の対応表の型で書かせる、③人は提案の絞り込みと価格だけ仕上げる——の3段です。私の場合、ゼロから作ると2〜3時間かかっていた提案書が、たたき台まで10分で出るようになりました。この記事では、実際の商談で使っている作成手順と指示の型を公開します。</p>
+<p><img src="/blog/img/eigyo-teiansho-ai-sakusei-hero.png" alt="営業の提案書AI作成フロー図: 商談議事録を全文渡す→AIが課題×提案の対応表でたたき台作成→人は提案の絞り込みと価格を仕上げる。ゼロから2〜3時間がたたき台10分に" loading="lazy"></p>
+<h2 id="s1">営業の提案書作成が重くなる本当の理由</h2>
+<p>提案書に時間がかかるのは、パワーポイントの作業が遅いからではありません。書き始める前の工程が重いからです。</p>
+<ul><li>商談メモを読み返して、先方の課題を整理し直す</li><li>どの課題にどのサービスを当てるか、構成を考える</li><li>過去の提案書を探して、使える部分を切り貼りする</li></ul>
+<p>つまり大半は「商談で聞いた内容の再整理」です。ここはAIの得意分野そのものです。逆に、<strong>どの提案に絞るか・いくらで出すか</strong>は受注を左右する判断なので、人がやるべき仕事として残します。この分担が崩れると「それっぽいが刺さらない提案書」が量産されるだけになります。</p>
+<h2 id="s2">AIで提案書を作成する3ステップ</h2>
+<p>前提として、元ネタになる商談の記録が必要です。商談の文字起こしを自動で残す仕組みは<a href="/blog/shodan-gijiroku-ai-jidoka.html">商談の議事録をAIで自動化する手順</a>で解説しています。議事録の自動化ができていると、提案書はその続きとして数分で始められます。</p>
+<h3>ステップ1: 商談の議事録をそのまま渡す</h3>
+<p>要約せず、文字起こしや議事録の全文をAIに渡します。人が先に要約すると、先方が話した「生の言葉」が落ちるためです。提案書に先方自身の言葉が入っているかどうかで、読まれ方が大きく変わります。</p>
+<h3>ステップ2: 「課題×提案」の対応表の型で書かせる</h3>
+<p>私が使っている指示の型はこれです。</p>
+<pre><code>この商談の議事録から、提案書のたたき台を作成してください。
+構成は以下の3列の対応表を中心にします。
+| テーマ | 御社の課題（先方の発言をそのまま使う） | 弊社がご提供できること |
+ルール:
+- 課題は先方が実際に話した言葉で書く（勝手に言い換えない)
+- 提案は当社の標準メニューから選ぶ（新しいサービスを発明しない）
+- 最後に「今後の流れ」を3ステップで</code></pre>
+<p>ポイントは2つ。<strong>課題の列は先方の言葉をそのまま使わせる</strong>こと（説得力の源泉）、<strong>提案の列は自社の標準メニューに限定する</strong>こと（AIが存在しないサービスを提案するのを防ぐ）。この型はフォーマットとして毎回固定します。</p>
+<h3>ステップ3: 人は「絞り込み」と「価格」だけやる</h3>
+<p>たたき台には課題と提案が網羅的に並びます。そのまま出してはいけません。</p>
+<ol><li>1. 対応表から<strong>今回刺す提案を1〜2個に絞る</strong>（全部載せは「何でも屋」に見えて逆効果）</li><li>2. 価格とスコープを決める（ここはAIに任せない）</li><li>3. 表紙と結びに、商談で感じた温度感に合わせたひと言を足す</li></ol>
+<p>ここまでで、私の場合は仕上げ込みで30〜40分です。構成を考える時間がなくなったぶん、絞り込みと価格の検討に頭を使えるようになったのが、時間短縮より大きい効果でした。</p>
+<h2 id="s3">提案書の質を落とさない2つのコツ</h2>
+<h3>型（フォーマット）を1つに固定する</h3>
+<p>毎回自由に作らせると、提案書の品質が担当者やその日の指示でぶれます。「課題×提案の対応表＋今後の流れ」のように構成を固定してしまえば、AIの出力は安定し、社内のレビューも速くなります。当社でも提案書のテンプレートを1本に固定し、可変部分（相手の課題・提案の主役・価格）だけ商談ごとに差し替える運用です。</p>
+<h3>汎用の「AIっぽい提案文」を検知して消す</h3>
+<p>「貴社のDXを推進し、業務効率化を実現します」のような、どの会社にも言える文章が混ざっていたら削除します。見分け方は簡単で、<strong>社名を競合他社に入れ替えても成立する文は全部削る</strong>。残った文だけが、その商談から生まれた提案です。</p>
+<h2 id="s4">提案書の前後もつながっている</h2>
+<p>提案書だけを速くしても、商談の前後が手作業のままだと効果は限定的です。商談直後のお礼メールは<a href="/blog/eigyo-mail-ai-henshin.html">営業メールの返信をAIで下書きする方法</a>の仕組みでその日のうちに送り、提案書は翌朝たたき台から仕上げる、という流れにすると、先方の熱が冷める前に提案まで届きます。営業の実務全体でどこをAIに任せるかは、<a href="https://www.aigear.jp/">AIgear</a>の無料壁打ちでもよく相談いただくテーマです。</p>
+<h2 id="s5">よくある質問</h2>
+<h3>パワーポイントのスライドまで作れますか？</h3>
+<p>構成と文章のたたき台まではAIが得意です。スライド化も自動化はできますが、まずは「Wordや1枚のドキュメントで内容を固めてからスライドに流し込む」順番をおすすめします。内容が固まっていれば、スライド化は型の流用で数分です。</p>
+<h3>議事録がない商談でも使えますか？</h3>
+<p>使えます。手書きメモや箇条書きでも、渡せばたたき台は出ます。ただし先方の言葉がそのまま残っている文字起こしのほうが、課題の列の説得力が明らかに上がります。これから仕組み化するなら文字起こしから整えるのが近道です。</p>
+<h3>顧客情報をAIに入れて問題ないですか？</h3>
+<p>利用するAIの学習設定（入力データを学習に使わない設定）の確認と、自社のデータ取扱い規程への適合が前提です。法人利用ではその設定が標準のプランを選び、社名を伏せて試すところから始める方法もあります。</p>
+<h2 id="s6">この指示の型をそのまま使いたい方へ</h2>
+<p>この記事で紹介した提案書たたき台の指示文（プロンプト）は、<a href="https://42pa3z.share-na2.hsforms.com/2Nz5ZjMlJRXqzbjEWIDUd1Q">配布フォーム</a>から無料で受け取れます。自社メニューに合わせた提案書テンプレートの固定まで相談したい方は、無料壁打ち（月5枠・60分）をご利用ください。売り込みはしません。</p>
+  </article>
+  <div class="cta-box">
+    <p>記事で使ったプロンプト・資料は無料で配布しています。<br>受け取りページから無料の個別相談（月5枠）にも進めます。</p>
+    <a class="btn" href="https://42pa3z.share-na2.hsforms.com/2Nz5ZjMlJRXqzbjEWIDUd1Q" rel="noopener">プロンプト・資料を無料で受け取る</a>
+    <a class="btn ghost" href="/#contact">無料壁打ち（月5枠・60分）の詳細を見る</a>
+  </div>
+  <div class="related"><h2>関連記事</h2><a class="card" href="/blog/shodan-gijiroku-ai-jidoka.html"><strong>商談の議事録をAIで自動化する手順｜入力20分→3分</strong><br><small>商談の議事録作成とCRM入力をAIで自動化する具体的な手順を解説。tl;dvの文字起こしをClaudeに渡し、要点整理・…</small></a><a class="card" href="/blog/eigyo-mail-ai-henshin.html"><strong>営業メールの返信をAIで下書き｜朝の処理15分→3分</strong><br><small>営業メールの返信下書きをAIに任せる手順を解説。Gmailの受信箱をClaudeに仕分けさせ、優先度づけと返信の下書きま…</small></a></div>
+</main>
+<footer>© 2026 株式会社figfig ｜ <a href="/">AIgear — AI × Sales Consulting</a></footer>
+</body>
+</html>
